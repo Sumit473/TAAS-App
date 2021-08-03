@@ -1,0 +1,101 @@
+.intro-slider {
+  background-image: url("../images/login/slider-bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left;
+  border-right: 5px solid  #BB1981;
+  border-radius: 10px 0 0 10px;
+  padding: 2% 6%;
+}
+
+.intro-slider .carousel-indicators li {
+  border-radius: 50%;
+  height: 5px;
+  margin-left: 8px;
+  position: relative;
+  width: 6px;
+}
+
+.intro-slider .carousel-indicators li.active {
+  background-color: #BB1981;
+}
+
+.outline {
+  border: 2px solid #BB1981;
+  border-radius: 50%;
+  display: block;
+  height: 12px;
+  width: 12px;
+}
+
+.feature-content img {
+  width: 80%;
+}
+
+.feature p {
+  margin-bottom: 100px;
+}
+
+.remember-and-reset {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+}
+
+.continue {
+  opacity: 0.6;
+  position: relative;
+}
+
+.continue p {
+  color:  #7E7D7F;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.hr {
+  background-color: #7E7D7F;
+  display: inline-block;
+  height: 1px;
+  position: absolute;
+  top: 12px;
+  width: 30%;
+}
+
+.hr:first-child {
+  left: 0;
+}
+
+.hr:last-child {
+  right: 0;
+}
+
+.oauth-login {
+  text-align: center;
+}
+
+.oauth-login a {
+  border: 2px solid rgba(126, 125, 127, 0.6);
+  border-radius: 10px;
+  padding: 21px 10px 8px;
+}
+
+.oauth-login a:first-child {
+  margin-right: 30px;
+}
+
+.oauth-login a:hover {
+  background-color: white;
+  box-shadow: 0 0 7px #7E7D7F;
+}
+
+.fa-google {
+  background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-facebook {
+  color: #4267B2;
+}

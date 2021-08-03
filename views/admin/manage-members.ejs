@@ -1,0 +1,584 @@
+  <%-include("partials/header");-%>
+
+  <title>Manage Members | Thapar Amateur Astronomers Society</title>
+
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="css/admin/manage-members.css">
+  </head>
+
+  <body>
+    <video autoplay muted loop class="page-bg-video">
+      <source src="starry-night.vid" type="video/mp4">
+    </video>
+
+    <!-- Navbar -->
+    <%-include("../partials/navbar");-%>
+
+    <section id="title">
+      <h3></h3>
+    </section>
+
+    <div class="modal fade" id="mentorModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="mentorLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="mentorLabel">Mentor<br>Form</h5>
+          </div>
+
+          <div class="modal-body">
+            <form class="modal-form" action="/add-mentor" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="far fa-smile"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="name" placeholder="Full Name..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="designation" placeholder="Designation..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-graduation-cap"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="specialization" placeholder="Specialization..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="drop-zone">
+                  <div class="drop-zone-thumb" data-label="default-profile.jpg">
+                    <i class="fas fa-times-circle"></i>
+                  </div>
+                  <i class="fas fa-cloud-upload-alt cloud"></i>
+
+                  <span class="drop-zone-prompt">Drag & drop mentor's image here or <label class="browse"><input type="file" name="profile-img">browse</label></span>
+                  <span class="supports">Supports JPG, JPEG, PNG</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="far fa-file-alt"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <textarea class="form-control" name="description" placeholder="Description..." rows="4" spellcheck="false" required></textarea>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add Mentor</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="executiveMemberModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="executiveMemberLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="executiveMemberLabel">Executive Member<br>Form</h5>
+          </div>
+
+          <div class="modal-body">
+            <form class="modal-form" action="/add-executive-member" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="far fa-smile"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="name" placeholder="Full Name..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-medal"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="designation" placeholder="Designation..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-hand-spock"></i>
+                  </div>
+                  <div class="col-sm-11">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <input class="form-control" type="text" name="interest1" placeholder="Interest1..." title="" autocomplete="off" spellcheck="false" required>
+                        <div class="unfocus-line"></div>
+                        <div class="focus-line"></div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <input class="form-control" type="text" name="interest2" placeholder="Interest2..." title="" autocomplete="off" spellcheck="false">
+                        <div class="unfocus-line"></div>
+                        <div class="focus-line"></div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <input class="form-control" type="text" name="interest3" placeholder="Interest3..." title="" autocomplete="off" spellcheck="false">
+                        <div class="unfocus-line"></div>
+                        <div class="focus-line"></div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="drop-zone">
+                  <div class="drop-zone-thumb" data-label="default-profile.jpg">
+                    <i class="fas fa-times-circle"></i>
+                  </div>
+                  <i class="fas fa-cloud-upload-alt cloud"></i>
+
+                  <span class="drop-zone-prompt">Drag & drop executor's image here or <label class="browse"><input type="file" name="profile-img">browse</label></span>
+                  <span class="supports">Supports JPG, JPEG, PNG</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="far fa-file-alt"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <textarea class="form-control" name="description" placeholder="Description..." rows="4" spellcheck="false" required></textarea>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add Mentor</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="coreMemberModal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="coreMemberLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title" id="coreMemberLabel">Core Member<br>Form</h5>
+          </div>
+
+          <div class="modal-body">
+            <form class="modal-form" action="/add-core-member" method="post" enctype="multipart/form-data">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="far fa-smile"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="name" placeholder="Full Name..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-hard-hat"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="batch" placeholder="Batch..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-user-cog"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <input class="form-control" type="text" name="societyWork" placeholder="Society Work..." title="" autocomplete="off" spellcheck="false" required>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="fas fa-hand-spock"></i>
+                  </div>
+                  <div class="col-sm-11">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <input class="form-control" type="text" name="interest1" placeholder="Interest1..." title="" autocomplete="off" spellcheck="false" required>
+                        <div class="unfocus-line"></div>
+                        <div class="focus-line"></div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <input class="form-control" type="text" name="interest2" placeholder="Interest2..." title="" autocomplete="off" spellcheck="false">
+                        <div class="unfocus-line"></div>
+                        <div class="focus-line"></div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                      <div class="col-sm-4">
+                        <input class="form-control" type="text" name="interest3" placeholder="Interest3..." title="" autocomplete="off" spellcheck="false">
+                        <div class="unfocus-line"></div>
+                        <div class="focus-line"></div>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                          Please provide a valid name.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="drop-zone">
+                  <div class="drop-zone-thumb" data-label="default-profile.jpg">
+                    <i class="fas fa-times-circle"></i>
+                  </div>
+                  <i class="fas fa-cloud-upload-alt cloud"></i>
+
+                  <span class="drop-zone-prompt">Drag & drop executor's image here or <label class="browse"><input type="file" name="profile-img">browse</label></span>
+                  <span class="supports">Supports JPG, JPEG, PNG</span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-1">
+                    <i class="far fa-file-alt"></i>
+                  </div>
+                  <div class="col-lg-11">
+                    <textarea class="form-control" name="description" placeholder="Description..." rows="4" spellcheck="false" required></textarea>
+                    <div class="unfocus-line"></div>
+                    <div class="focus-line"></div>
+                    <div class="valid-feedback">
+                      Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                      Please provide a valid name.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-success">Add Mentor</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="member-flex">
+      <h2>Members & Teams</h2>
+      <div class="add-member">
+        <div class="member-type btn-group">
+          <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="chosen-member">
+              <div>Type</div>
+              <div>Mentor</div>
+            </div>
+            <i class="fas fa-caret-down"></i>
+          </button>
+
+          <div class="dropdown-menu">
+            <div class="dropdown-item">Mentor</div>
+            <div class="dropdown-item">Executive Member</div>
+            <div class="dropdown-item">Core Member</div>
+            <div class="dropdown-item">Member</div>
+          </div>
+        </div>
+
+        <button type="button" data-toggle="modal" data-target="#mentorModal"><i class="fas fa-plus"></i> Add Member</button>
+      </div>
+    </div>
+
+    <section id="executive-members">
+      <h3>Executive Members</h3>
+      <div class="container-fluid">
+        <div class="executive mentors row">
+          <%mentors.forEach(function(mentor) {%>
+          <div class="mentors-column col-md-6 ">
+            <div class="crud crud-executor">
+              <form class="delete-executor" action="/delete-mentor/<%=mentor.id%>" method="post">
+                <button type="submit" name="button"><i class="far fa-trash-alt"></i></button>
+              </form>
+              <form onsubmit="" class="update-executor" action="/update-mentor/<%=mentor.id%>" method="post" enctype="multipart/form-data">
+                <label class="edit-profile-photo"><input type="file" name="profile-img"><i class="fas fa-edit"></i></label>
+                <div class="img-outline">
+                </div>
+                <img src="data:image/<%=mentor.profileImg.contentType%>;base64,<%=mentor.profileImg.data.toString('base64')%>" alt="">
+                <div class="change-intro">
+                  <div class="intro">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="name" value="<%=mentor.name%>" title="" placeholder="Full Name" autocomplete="off" spellcheck="false" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid name.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="designation" value="<%=mentor.designation%>" title="" placeholder="Designation" autocomplete="off" spellcheck="false" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid designation.
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" name="">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <%})%>
+        </div>
+
+        <div class="executive members row">
+          <%executiveMembers.forEach(function(executiveMember) {%>
+          <div class="members-column col-xl-3 col-lg-4 col-md-6">
+            <div class="crud crud-executor">
+              <form class="delete-executor" action="/delete-executive-member/<%=executiveMember.id%>" method="post">
+                <button type="submit" name="button"><i class="far fa-trash-alt"></i></button>
+              </form>
+              <form onsubmit="" class="update-executor" action="/update-executive-member/<%=executiveMember.id%>" method="post" enctype="multipart/form-data">
+                <label class="edit-profile-photo"><input type="file" name="profile-img"><i class="fas fa-edit"></i></label>
+                <div class="img-outline">
+                </div>
+                <img src="data:image/<%=executiveMember.profileImg.contentType%>;base64,<%=executiveMember.profileImg.data.toString('base64')%>" alt="">
+                <div class="change-intro">
+                  <div class="intro">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="name" value="<%=executiveMember.name%>" title="" autocomplete="off" placeholder="Full Name" spellcheck="false" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid name.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="designation" value="<%=executiveMember.designation%>" title="" autocomplete="off" placeholder="Designation" spellcheck="false" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid designation.
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" name="">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <%})%>
+        </div>
+      </div>
+    </section>
+
+    <section id="core-members">
+      <h3>Core Members</h3>
+      <div class="container-fluid">
+        <div class="row">
+          <%coreMembers.forEach(function(coreMember) {%>
+          <div class="col-lg-3">
+            <div class="crud crud-core">
+              <form class="update-core" action="/update-core-member/<%=coreMember.id%>" method="post" enctype="multipart/form-data">
+                <img src="data:image/<%=coreMember.profileImg.contentType%>;base64,<%=coreMember.profileImg.data.toString('base64')%>" alt="">
+                <div class="change-intro">
+                  <div class="intro">
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="name" value="<%=coreMember.name%>" title="" placeholder="Full Name" spellcheck="false" required>
+                      <div class="unfocus-line"></div>
+                      <div class="focus-line"></div>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid name.
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input class="form-control" type="text" name="societyWork" value="<%=coreMember.societyWork%>" title="" placeholder="Society Work" spellcheck="false" required>
+                      <div class="unfocus-line"></div>
+                      <div class="focus-line"></div>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                      <div class="invalid-feedback">
+                        Please provide a valid designation.
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" name="">Save Changes</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <%})%>
+        </div>
+      </div>
+    </section>
+
+    <!-- Circular Progress Indicator -->
+    <%-include("../partials/circular-progress");-%>
+
+    <!-- Footer -->
+    <%-include("../partials/footer");-%>
+
+    <!-- Local Script -->
+    <script src="scripts/admin/manage-members.js" charset="utf-8"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+      AOS.init(); // AOS Initialization
+    </script>
+  </body>
+</html>

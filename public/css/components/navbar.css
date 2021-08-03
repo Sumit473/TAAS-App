@@ -1,0 +1,291 @@
+/* Navbar */
+
+.my-nav {
+  background-color: #0F0F30;
+  border-bottom: 4px solid #BB1981;
+  box-shadow: 2px 2px 20px black;
+  justify-content: flex-start;
+  left: 50px;
+  padding: 0 20px;
+  position: fixed;
+  right: 50px;
+  top: 40px;
+  transform: skew(-30deg);
+  z-index: 1000;
+}
+
+.taas-brand {
+  color: white;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.45rem;
+  padding: 10px;
+  transform: skew(30deg);
+}
+
+.taas-brand:hover {
+  color: #FC9012;
+  text-decoration: none;
+}
+
+.tilted-box, .tilted-line {
+  height: 50px;
+  position: absolute;
+  transform: skew(0deg);
+  top: 10px;
+  z-index: -1;
+}
+
+.tilted-box {
+  background-color: #78C6DC;
+  left: 275px;
+  opacity: 0.3;
+  width: 280px;
+}
+
+.tilted-line {
+  background-color: #BB1981;
+  left: 558px;
+  width: 5px;
+}
+
+.nav-main-section {
+  display: flex;
+}
+
+.my-nav ul {
+  align-items: center;
+  display: flex;
+  margin-left: 70px;
+  padding: 10px 8px 0 10px;
+  transform: skew(30deg);
+}
+
+.navbar-item {
+  list-style: none;
+  margin-right: 20px;
+}
+
+.navbar-link, .dropdown-item {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.navbar-link:hover {
+  color: #78C6DC;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar-link::before {
+  background-color: #BB1981;
+  content: '';
+  display: block;
+  height: 4px;
+  margin-bottom: 5px;
+  transform: scaleX(0);
+  transition: all 0.5s;
+  width: 70%;
+}
+
+.navbar-link::before {
+  transform-origin: left;
+}
+
+.navbar-link:hover::before {
+  transform: scaleX(1) skew(-30deg);
+}
+
+.navbar-link i:first-child {
+  color: white;
+  display: none;
+}
+
+.dropdown-menu {
+  background-color: white;
+  padding: 5px;
+}
+
+.dropdown-item {
+  color: black;
+}
+
+.dropdown-item:hover {
+  background-color: #BB1981;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 2px 6px black;
+  color: white;
+}
+
+.more-item {
+  display: none;
+  margin: 10px 0 0 10px;
+}
+
+.more-link {
+  color: #ccc;
+  font-size: 1.5rem;
+}
+
+.more-link:hover {
+  color: #78C6DC;
+}
+
+.more-dropdown > a {
+  display: none;
+}
+
+.team-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.fa-caret-right {
+  margin-left: 6px;
+}
+
+@keyframes unskew {
+  to {
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+@keyframes skew {
+  to {
+    left: 50px;
+    right: 50px;
+    top: 40px;
+  }
+}
+
+@keyframes smooth-slideIn {
+  from {
+    padding-left: 10px;
+  }
+  to {
+    padding-left: 0;
+  }
+}
+
+@keyframes smooth-slideOut {
+  from {
+    padding-left: 0;
+  }
+  to {
+    padding-left: 10px;
+  }
+}
+
+@keyframes inc-opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.social-links {
+  display: flex;
+  position: absolute;
+  right: 70px;
+  z-index: -1;
+}
+
+.social-link {
+  background-color: #BB1981;
+  height: 70px;
+  margin-left: 10px;
+  text-align: center;
+  transform: skew(0);
+  width: 36px;
+}
+
+.social-link i {
+  color: white;
+  margin: 28px 10px 20px;
+  transform: skew(30deg);
+}
+
+.social-link i:hover {
+  color: #78C6DC;
+}
+
+.nav-last-section {
+  display: flex;
+}
+
+.search {
+  bottom: 16px;
+  color: white;
+  font-size: 1.5rem;
+  position: absolute;
+  transform: skew(30deg);
+  right: 24px;
+}
+
+.search:hover {
+  color: #78C6DC;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  transform: skew(30deg);
+}
+
+.hamburger div {
+  background-color: white;
+  height: 3px;
+  width: 30px;
+  margin-bottom: 5px;
+}
+
+.hamburger:hover div {
+  animation: disco 0.5s 1 forwards;
+}
+
+.line1 {
+  transform: scaleX(0.8);
+  transform-origin: right;
+  transition: all 0.5s;
+}
+
+.line2 {
+  transform: scaleX(0.4);
+  transform-origin: right;
+  transition: all 0.5s;
+}
+
+.line3 {
+  transform: scaleX(0.6);
+  transform-origin: right;
+  transition: all 0.5s;
+}
+
+.hamburger:hover .line1 {
+  transform: scaleX(0.6);
+}
+
+.hamburger:hover .line2 {
+  transform: scaleX(0.8);
+}
+
+.hamburger:hover .line3 {
+  transform: scaleX(0.4);
+}
+
+@keyframes disco {
+  0% {
+    background-color: #BB1981;
+  }
+  50% {
+    background-color: #78C6DC;
+  }
+  100% {
+    background-color: #BB1981;
+  }
+}

@@ -1,0 +1,66 @@
+.drop-zone {
+  margin-top: 30px;
+}
+
+.password-validity {
+  height: 0;
+  overflow: hidden;
+}
+
+.show-validity {
+  animation: show-validation 0.8s 1 forwards;
+  overflow: visible;
+}
+
+.hide-validity {
+  animation: hide-validation 0.5s 1 forwards;
+  overflow: hidden;
+}
+
+.password-validity-pill {
+  background-color: rgba(126, 125, 127, 0.6);
+  border-radius: 5px;
+  display: inline-block;
+  height: 6px;
+  width: 55px;
+}
+
+.password-validation-summary, .password-scheme {
+  margin: 5px 0;
+  opacity: 0.8;
+}
+
+.password-scheme {
+  color: #7E7D7F !important;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+}
+
+.check-terms {
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
+@keyframes show-validation {
+  from {
+    height: 0;
+    margin-top: 0;
+  }
+
+  to {
+    height: 110px;
+    margin-top: 15px;
+  }
+}
+
+@keyframes hide-validation {
+  from {
+    height: 110px;
+    margin-top: 15px;
+  }
+
+  to {
+    height: 0;
+    margin-top: 0;
+  }
+}

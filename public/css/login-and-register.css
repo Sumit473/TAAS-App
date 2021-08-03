@@ -1,0 +1,107 @@
+body {
+  background-image: url("../images/login/login-page-bg.jpg");
+  background-attachment: fixed;
+}
+
+p, a {
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: #171947;
+  font-weight: 500;
+}
+
+a:hover {
+  color: #BB1981;
+}
+
+#intro-and-register, #intro-and-login {
+  padding: 0 7%;
+}
+
+.intro-and-register, .intro-and-login {
+  filter: drop-shadow(-1px 2px 8px black);
+}
+
+.register, .login {
+  background-color: white;
+  background-image: url("../images/login/login-bg.png");
+  border-radius: 0 10px 10px 0;
+  padding: 2% 8%;
+  text-align: left;
+}
+
+.register .header, .login .header {
+  margin-bottom: 40px;
+}
+
+.register .logo, .login .logo {
+  filter: drop-shadow(1px 1px 5px black);
+}
+
+.restriction {
+  font-family: 'GFS Didot', serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.register p, .login p {
+  color: #171947;
+  font-weight: 500;
+}
+
+.form-group {
+  padding-top: 40px;
+  position: relative;
+  margin-bottom: 0;
+}
+
+.form-group .focus-line, .form-group .unfocus-line {
+  width: 100%;
+}
+
+.fa-eye-slash, .fa-eye {
+  color: #BB1981;
+  cursor: pointer;
+  font-size: 1.2rem;
+  position: absolute;
+  right: 10px;
+  top: 50px;
+}
+
+.fa-eye-slash {
+  opacity: 0.5;
+}
+
+.fa-eye-slash:hover {
+  opacity: 1;
+}
+
+.fa-eye {
+  display: none;
+}
+
+.go-to-login, .go-to-register {
+  font-weight: 500;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.go-to-login span, .go-to-register span {
+  color: #171947;
+  opacity: 0.8;
+}
+
+.go-to-login a, .go-to-register a {
+  color: #171947;
+  font-family: 'Roboto', sans-serif;
+}
+
+.go-to-login a:hover, .go-to-register a:hover {
+  color: #BB1981;
+}
+
+#footer {
+  background-color: transparent;
+}

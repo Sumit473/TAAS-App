@@ -1,0 +1,170 @@
+  <%-include("partials/header");-%>
+
+  <title>Login | Thapar Amateur Astronomers Society</title>
+
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="css/login-and-register.css">
+  <link rel="stylesheet" href="css/login.css" />
+  </head>
+
+  <body class="bg-image">
+    <!-- Navbar -->
+    <%-include("partials/navbar");-%>
+
+    <section id="title">
+      <h3></h3>
+    </section>
+
+    <section id="intro-and-login" class="new-section">
+      <div class="intro-and-login row">
+        <div class="intro-slider col-md-6">
+          <div class="bottom-left-ring1">
+          </div>
+          <div class="bottom-left-ring2">
+          </div>
+
+          <div id="introCarouselIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#introCarouselIndicators" data-slide-to="0" class="active"><div class="outline fully-center"></div></li>
+              <li data-target="#introCarouselIndicators" data-slide-to="1"><div class="fully-center"></div></li>
+              <li data-target="#introCarouselIndicators" data-slide-to="2"><div class="fully-center"></div></li>
+              <li data-target="#introCarouselIndicators" data-slide-to="3"><div class="fully-center"></div></li>
+            </ol>
+
+            <div class="carousel-inner">
+              <div class="carousel-item feature bg-image active">
+                <div class="feature-content">
+                  <h2 class="gradient-text">Manage Events</h2>
+                  <img src="images/login/manage-events.png" alt="manage-events" />
+                  <p>Create a new event having custom ordering with necessary information and manage old ones, so that everyone can participate, develop interest and will be stay connected with this society.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item feature bg-image">
+                <div class="feature-content">
+                  <h2 class="gradient-text">Manage Blogs</h2>
+                  <img src="images/login/manage-blogs.png" alt="manage-blogs" />
+                  <p>Create and Post a new blog having custom ordering and manage old ones, so that everyone can grasp a new and updated information on astronomy.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item feature bg-image">
+                <div class="feature-content">
+                  <h2 class="gradient-text">Manage Gallery</h2>
+                  <img src="images/login/manage-gallery.png" alt="manage-gallery" />
+                  <p>Upload images and Manage the gallery of the events, trips and many joyful times. Having collections of latter keeps them vivid in everyone's mind.</p>
+                </div>
+              </div>
+
+              <div class="carousel-item feature bg-image">
+                <div class="feature-content">
+                  <h2 class="gradient-text">Manage Team</h2>
+                  <img src="images/login/manage-team.png" alt="manage-team" />
+                  <p>Add a new member in different teams and manage old ones, so that everyone can know the people behind all the hard work, running this society and passionate about astronomy.</p>
+                </div>
+              </div>
+            </div>
+
+            <a href="#introCarouselIndicators" data-slide="prev">
+              <span class="sr-only">Previous</span>
+            </a>
+
+            <a href="#introCarouselIndicators" data-slide="next">
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="login col-md-6">
+          <div class="header">
+            <a href="/"><img class="logo" src="images/taas-logo.png" alt="taas-logo"></a>
+            <span class="restriction">Admin Login</span>
+          </div>
+
+          <h2>Welcome Back</h2>
+          <p>Login to continue managing database</p>
+
+          <%if (success_msg.length) {%>
+            <p><%=success_msg%></p>
+          <%}%>
+          <%if (error_msg.length) {%>
+            <p><%=error_msg%></p>
+          <%}%>
+
+          <form onsubmit="controllSubmission(event);" class="login-form" action="/auth/login" method="post">
+            <div class="form-group">
+              <label for="formUser">Username or Email</label>
+              <input type="text" class="form-control transparent-input" id="formUser" name="user" value="" title="" autocomplete="off" spellcheck="false" required/>
+              <div class="unfocus-line"></div>
+              <div class="focus-line default-transition"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="formPassword">Password</label>
+              <input type="password" class="form-control transparent-input" id="formPassword" name="password" value="" title="" autocomplete="off" spellcheck="false" required/>
+              <i class="far fa-eye eye"></i>
+              <i class="far fa-eye-slash eye"></i>
+              <div class="unfocus-line"></div>
+              <div class="focus-line default-transition"></div>
+            </div>
+
+            <div class="remember-and-reset flex">
+              <div class="remember flex">
+                <i class="checkbox default-transition"></i>
+                <span>Remember me</span>
+              </div>
+
+              <a class="reset-password default-transition" href="">Reset password?</a>
+            </div>
+
+            <button class="login-and-register-button default-transition" type="submit">Log In</button>
+          </form>
+
+          <div class="continue">
+            <span class="hr">
+            </span>
+            <p>or continue with</p>
+            <span class="hr">
+            </span>
+          </div>
+
+          <div class="oauth-login">
+            <a class="default-transition"href="/auth/google">
+              <i class="fab fa-google fa-2x"></i>
+            </a>
+
+            <a class="default-transition" href="/auth/facebook">
+              <i class="fab fa-facebook fa-2x"></i>
+            </a>
+          </div>
+
+          <div class="go-to-register">
+            <span>Don't have an account?</span>
+            <a class="default-transition" href="/auth/register">Register</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact-Us -->
+    <%-include("partials/contact-us")-%>
+
+    <!-- Circular Progress Indicator -->
+    <%-include("partials/circular-progress");-%>
+
+    <!-- Footer -->
+    <%-include("partials/footer");-%>
+
+    <!-- Local Script -->
+    <script src="scripts/validate-form.js" charset="utf-8"></script>
+    <script src="scripts/login-and-register.js" charset="utf-8"></script>
+    <script src="scripts/login.js" charset="utf-8"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+      AOS.init();   // AOS Initialization
+    </script>
+  </body>
+</html>

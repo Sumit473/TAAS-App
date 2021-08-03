@@ -1,0 +1,159 @@
+/* Title */
+
+#title .bg-image {
+  background-image: url("../images/about/about.jpg");
+}
+
+/* About */
+
+#about {
+  margin-top: -130px;
+  position: relative;
+}
+
+.about-bg {
+  background-image: url("../images/about/founders/founders-bg.png");
+  background-attachment: fixed;
+  border-radius: 10px;
+}
+
+/* Vision */
+#our-vision {
+  text-align: left;
+}
+
+#our-vision .container-fluid {
+  background-image: url("../images/container-bg.png");
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  padding-bottom: 0;
+}
+
+.vision-column {
+  padding: 15px;
+}
+
+.vision-img {
+  transform: translateY(0);
+  transition: all 0.3s;
+  width: 70%;
+}
+
+.vision-heading img {
+  filter: hue-rotate(60deg);
+}
+
+@media (hover:hover) {
+  .vision-img:hover {
+    transform: translateY(-30px);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #our-vision {
+    text-align: center;
+  }
+}
+
+/* Founders */
+#founders {
+  background-image: url("../images/container-bg.png");
+  background-image: url("../images/container-bg.png"), linear-gradient(-11.5deg, transparent 68%, #26272B 20%);
+  padding: 20% 0 15%;
+  position: relative;
+}
+
+.top-line {
+  background-color: #BB1981;
+  height: 5px;
+  left: -1%;
+  position: absolute;
+  top: 23.5%;
+  transform: rotate(-11.5deg);
+  width: 102%;
+}
+
+#founders h2 {
+  color: #78C6DC;
+  margin-top: 40px;
+}
+
+#founders h3 {
+  color: white;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+#founders h3::after {
+  background-color: #BB1981;
+  content: '';
+  display: block;
+  box-shadow: -1px 1px 3px black;
+  height: 8px;
+  margin: 5px auto 0;
+  transform: rotate(-11.5deg) skew(-30deg);
+  width: 40px;
+}
+
+#founders img {
+  position: absolute;
+  width: 15%;
+}
+
+#founders img:nth-child(2) {
+  top: 9.5%;
+  right: 8%;
+}
+
+#founders img:last-child {
+  left: 8%;
+  bottom: 25%;
+}
+
+/* Objectives */
+#objectives .container-fluid {
+  background-image: url("../images/container-bg.png");
+  border-top: 5px solid #BB1981;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 0 4% 10%;
+}
+
+#objectives h2 {
+  margin-top: 30px;
+}
+
+#objectives img {
+  width: 30%;
+}
+
+.objectives-table {
+  margin-top: 12%;
+}
+
+.objective {
+  color: white;
+  text-align: left;
+  vertical-align: top;
+}
+
+.serial-no {
+  background-color: #BB1981;
+  border: 2px solid #78C6DC;
+  border-radius: 50%;
+  font-weight: 600;
+  margin:0 5px 20px 0;
+  padding: 5px 10px;
+}
+
+.objective:first-child {
+  padding-right: 20%;
+}
+
+.objective:last-child {
+  padding-left: 15%;
+}
+
+.objectives-row:last-child .objective {
+  padding-top: 5%;
+}

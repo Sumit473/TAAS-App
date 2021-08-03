@@ -1,0 +1,60 @@
+/* Circular Progress Indicator*/
+
+.progress-indicator {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+}
+
+svg {
+  bottom: 0;
+  position: fixed;
+  z-index: 1000;
+}
+
+svg circle {
+  fill: none;
+  stroke: #3C3C3D;
+  stroke-width: 4;
+}
+
+svg circle:nth-child(2) {
+  stroke: #BB1981;
+  stroke-dasharray: 157;
+  stroke-dashoffset: 157;
+}
+
+.progress-indicator i {
+  bottom: 74px;
+  color: #78C6DC;
+  left: 61px;
+  position: fixed;
+  z-index: 1001;
+}
+
+.progress-indicator i:hover {
+  animation: progress-disco 1s 1 forwards;
+  cursor: pointer;
+}
+
+.progress-indicator i:hover + svg circle:first-child {
+  stroke: #555;
+}
+
+@keyframes progress-disco {
+  0% {
+    color: #BB1981;
+  }
+  20% {
+    color: #78C6DC;
+  }
+  50% {
+    color: #BB1981;
+  }
+  75% {
+    color: #78C6DC;
+  }
+  100% {
+    color: #BB1981;
+  }
+}

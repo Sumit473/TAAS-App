@@ -1,0 +1,97 @@
+<%-include("../partials/header");-%>
+
+    <title>Core - Members | Thapar Amateur Astronomers Society</title>
+
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="css/team/core-members.css" />
+  </head>
+
+  <body>
+    <video autoplay muted loop class="page-bg-video">
+      <source src="starry-night.vid" type="video/mp4" />
+    </video>
+
+    <!-- Navbar -->
+    <%-include("../partials/navbar")-%>
+
+    <section id="title">
+      <div class="page-heading bg-image">
+        <h1>Core Members</h1>
+        <h3 class="punch-line">with details</h3>
+      </div>
+    </section>
+
+    <section id="members-gallery" class="new-section">
+      <div class="end-line">
+      </div>
+
+      <div class="container-fluid">
+        <div class="box-top">
+          <div></div>
+          <div></div>
+        </div>
+
+        <ul class="member-list row">
+          <%coreMembers.forEach(function(coreMember) {%>
+          <li class="col-lg-3 col-md-4 col-sm-6">
+            <a class="member" href="#member">
+              <span class="center-helper"></span>
+              <img class="overlay-dim-img" src="data:image/<%=coreMember.profileImg.contentType%>;base64,<%=coreMember.profileImg.data.toString('base64')%>" alt="<%=coreMember.name.split(" ")[0]%>_img">
+              <span class="member-name fully-center"><%=coreMember.name%></span>
+              <i class="fas fa-caret-up fa-2x caret-up absolute-horizontal-center"></i>
+            </a>
+            <div class="member-description">
+              <h2 class="title">Member Details</h2>
+              <p><%=coreMember.description%>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>
+                Member Name:
+                <span><%=coreMember.name%></span>
+              </p>
+              <p>
+                Branch:
+                <span>COE</span>
+              </p>
+              <p>
+                Society Work:
+                <span><%=coreMember.societyWork%></span>
+              </p>
+              <%const interests = coreMember.interests.filter(function(interest) {%>
+                <%return (interest !== "");%>
+              <%});%>
+
+              <%for (let i = 0; i < interests.length - 1; i++) {%>
+                <span><%=interests[i]%> <span class="next">| </span></span>
+              <%}%>
+              <span><%=interests[interests.length - 1]%></span>
+            </div>
+          </li>
+          <%})%>
+        </ul>
+
+        <div class="box-bottom">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact-Us -->
+    <%-include("../partials/contact-us")-%>
+
+    <!-- Circular Progress Indicator -->
+    <%-include("../partials/circular-progress");-%>
+
+    <!-- Footer -->
+    <%-include("../partials/footer");-%>
+
+    <!-- Local Script -->
+    <script src="scripts/team/core-members.js" charset="utf-8"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+      AOS.init(); // AOS Initialization
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+  <%-include("partials/header");-%>
+
+  <title>About | Thapar Amateur Astronomers Society</title>
+
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="css/about.css" />
+  </head>
+
+  <body>
+    <video autoplay muted loop class="page-bg-video">
+      <source src="starry-night.vid" type="video/mp4" />
+    </video>
+
+    <!-- Navbar -->
+    <%-include("partials/navbar");-%>
+
+    <!-- Title -->
+    <section id="title">
+      <div class="page-heading bg-image">
+        <h1>About</h1>
+        <h3 class="punch-line">Our Vision / Our Objectives</h3>
+      </div>
+    </section>
+
+    <section id="about" class="new-section">
+      <div class="end-line">
+      </div>
+
+      <div class="about-bg bg-image">
+
+        <!-- Our Vision -->
+        <section id="our-vision">
+          <div class="container-fluid">
+            <div class="box-top">
+              <div></div>
+              <div></div>
+            </div>
+
+            <div class="row">
+              <div class="vision-column col-lg-6" data-aos="fade-right" data-aos-duration="800" data-aos-offset="150">
+                <span class="center-helper"></span>
+                <img class="vision-img overlay-bright-img" src="images/about/our-vision.jpg" alt="our-vision" />
+              </div>
+
+              <div class="vision-column col-lg-6" data-aos="fade-left" data-aos-duration="800" data-aos-offset="150">
+                <h2>OUR VISION</h2>
+                <h3>Explore the Cosmos with Science and Engineering</h3>
+                <p>The main motive is to cultivate an environment where not only each group member is closely learning about the cosmos where we live in but also works towards spreading the gathered knowledge among the broader sections of society around us. The working of the society is divided into two broad areas, namely the ‘in-house learning’ and ‘spreading scientific knowledge’.
+                  <br /><br />
+                  These two objectives areaccomplished by organizing both private and public meetings and events like workshops, quiz, expert lectures, trips for sky gazing, movie showcases and much more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Founders -->
+        <section id="founders">
+          <div class="top-line">
+          </div>
+
+          <img class="overlay-bright-img default-transition" src="images/about/founders/founder1.png" alt="founder1" />
+          <h3>Founders</h3>
+          <h2>Meet Debabrata & Bandhan.</h2>
+          <img class="overlay-bright-img default-transition" src="images/about/founders/founder2.png" alt="founder2" />
+        </section>
+
+        <!-- Objectives -->
+        <section id="objectives">
+          <div class="container-fluid">
+            <h2>Our Objectives</h2>
+            <img class="fully-center" src="images/about/shared-goals.png" alt="goals" />
+            <table class="objectives-table">
+              <tr class="objectives-row">
+                <td class="objective"><span class="serial-no">1</span> To cultivate scientific temperament and nourish scientifically inquisitive young minds.</td>
+                <td class="objective"><span class="serial-no">2</span> To encourage innovation in young aspiring minds who do not get a chance, in the daily load of the engineering course.</td>
+              </tr>
+              <tr class="objectives-row">
+                <td class="objective"><span class="serial-no">3</span> To create a platform for students who are interested in applying their knowledge and skills in the field of Astronomy, Astrophysics, Cosmology & Space Science.</td>
+                <td class="objective"><span class="serial-no">4</span> To open up opportunities for students willing to work as Professionals in the subject.</td>
+              </tr>
+            </table>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Contact-Us -->
+    <%-include("partials/contact-us")-%>
+
+    <!-- Circular Progress Indicator -->
+    <%-include("partials/circular-progress");-%>
+
+    <!-- Footer -->
+    <%-include("partials/footer");-%>
+
+    <!-- Local Script -->
+    <script src="scripts/about.js" charset="utf-8"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+      AOS.init();   // AOS Initialization
+    </script>
+  </body>
+</html>

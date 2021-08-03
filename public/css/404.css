@@ -1,0 +1,155 @@
+.bg {
+  background-attachment: fixed;
+  background-image: url("../images/starry-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.logo {
+  height: 10%;
+  width: 10%;
+}
+
+.small-planet {
+  filter: drop-shadow(-2px 2px 7px  #43578C);
+  left: 100px;
+  position: absolute;
+  width: 8%;
+}
+
+.saturn {
+  filter: drop-shadow(-2px 2px 7px  #43578C);
+  position: fixed;
+  right: -20px;
+  top: 30px;
+  transform: rotate(-60deg);
+  width: 15%;
+  z-index: -1;
+}
+
+.big-heading {
+  filter: drop-shadow(-2px 2px 7px  #BB1981);
+  color: #BB1981;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14rem;
+  font-weight: 700;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.big-heading img {
+  animation: fire-ring 2.5s linear infinite alternate;
+  margin: 0 1%;
+  width: 200px;
+}
+
+@keyframes fire-ring {
+  from {
+    filter: drop-shadow(2px 2px 0px  #43578C);
+  }
+  to {
+    filter: drop-shadow(2px 2px 18px  #43578C);
+  }
+}
+
+.astronaut {
+  -webkit-animation: astro-detach 3.5s forwards 1;         /* for less modern browsers */
+  animation: astro-detach 3.5s forwards 1;
+  position: fixed;
+  width: 18%;
+  z-index: 1;
+}
+
+@keyframes astro-detach{
+  from {
+    left: 220px;
+    opacity: 0.8;
+    top: 170px;
+    transform: rotate(0deg);
+  }
+  to {
+    left: 950px;
+    opacity: 1;
+    top: 320px;
+    transform: rotate(30deg);
+    width: 26%;
+  }
+}
+
+@keyframes swing {
+  from {
+    left: 950px;
+    top: 320px;
+  }
+  to {
+    left: 900px;
+    top: 250px;
+  }
+}
+
+.rocket {
+  -webkit-animation: rocket-detach 3.5s 1 forwards;
+  animation: rocket-detach 3.5s 1 forwards;
+  position: fixed;
+  transform: rotate(12deg);
+  width: 33%;
+  z-index: 1;
+}
+
+@keyframes rocket-detach {
+  from {
+    left: 10px;
+    opacity: 1;
+    top: 300px;
+  }
+  to {
+    left: 680px;
+    opacity: 0.8;
+    top: 70px;
+    width: 15%;
+  }
+}
+
+.punch-line {
+  color: white;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  margin-top: 60px;
+  text-align: center;
+}
+
+.home-button {
+  background-color: #BB1981;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  display: block;
+  margin: 40px auto 0;
+  padding: 6px 30px;
+}
+
+.home-button:hover {
+  border: 2px solid white;
+  box-shadow: -2px 2px 15px #BB1981;
+}
+
+.home-button i {
+  margin-left: 20px;
+}
+
+.earth {
+  filter: drop-shadow(-2px 2px 7px #43578C);
+  left: -140px;
+  position: fixed;
+  top: 450px;
+  transform: rotate(30deg);
+  width: 40%;
+}
+
+svg {
+  height: 0;
+  width: 0;
+}

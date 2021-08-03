@@ -1,0 +1,161 @@
+  <%-include("partials/header");-%>
+
+  <title>Regsiter | Thapar Amateur Astronomers Society</title>
+
+  <!-- Local Stylesheet -->
+  <link rel="stylesheet" href="css/login-and-register.css" />
+  <link rel="stylesheet" href="css/register.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <%-include("partials/navbar");-%>
+
+    <section id="title">
+      <h3></h3>
+    </section>
+
+    <section id="intro-and-register" class="new-section">
+      <div class="intro-and-register row">
+        <div class="intro col-md-6">
+        </div>
+
+        <div class="register col-md-6">
+          <div class="header">
+            <a href="/"><img class="logo" src="images/taas-logo.png" alt="taas-logo"></a>
+            <span class="restriction">Admin Register</span>
+          </div>
+
+          <h2>Register New Account</h2>
+          <p>Start managing database of the society</p>
+
+          <%if (success_msg.length) {%>
+            <p><%=success_msg%></p>
+          <%}%>
+          <%if (error_msg.length) {%>
+            <p><%=error_msg%></p>
+          <%}%>
+
+          <form onsubmit="controllSubmission(event);" class="register-form" action="/auth/register" method="post" enctype="multipart/form-data">
+            <div class="row username-and-email">
+              <div class="username col-6">
+                <div class="form-group">
+                  <label for="formUsername">Username</label>
+                  <input type="text" class="form-control transparent-input" id="formUsername" name="username" value="" title="" autocomplete="off" spellcheck="false" required />
+                  <div class="unfocus-line"></div>
+                  <div class="focus-line default-transition"></div>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                  </div>
+                </div>
+              </div>
+
+              <div class="email col-6">
+                <div class="form-group">
+                  <label for="formEmail">Email</label>
+                  <input type="email" class="form-control transparent-input" id="formEmail" name="email" value="" title="" autocomplete="off" spellcheck="false" aria-describedby="emailHelp" required />
+                  <div class="unfocus-line"></div>
+                  <div class="focus-line default-transition"></div>
+                  <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                  <div class="invalid-feedback">
+                    Please provide a valid email.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="drop-zone default-transition">
+                <div class="drop-zone-thumb bg-image" data-profileImg="default-profile.jpg">
+                  <i class="fas fa-times-circle default-transition"></i>
+                </div>
+                <i class="fas fa-cloud-upload-alt cloud transparent-cloud  default-transition"></i>
+
+                <span class="drop-zone-prompt">Drag & drop your image here <br /> or
+                  <label class="browse default-transition">
+                    <input type="file" name="profileImg" />
+                    browse
+                  </label>
+                </span>
+
+                <span class="supports">Supports JPG, JPEG, PNG</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="formPassword">Password</label>
+              <input type="password" class="form-control transparent-input" id="formPassword" name="password" value="" title="" autocomplete="off" spellcheck="false" required />
+              <i class="far fa-eye eye"></i>
+              <i class="far fa-eye-slash eye"></i>
+              <div class="unfocus-line"></div>
+              <div class="focus-line default-transition"></div>
+              <div class="password-validity">
+                <div class="password-validity-pills">
+                  <span class="password-validity-pill default-transition"></span>
+                  <span class="password-validity-pill default-transition"></span>
+                  <span class="password-validity-pill default-transition"></span>
+                </div>
+                <p class="password-validation-summary default-transition"></p>
+                <p class="password-scheme">Make sure it's at least 15 characters OR at least 8 characters including an uppercase letter, a number and a special character.</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="formConifrmPass">Confirm Password</label>
+              <input type="password" class="form-control transparent-input" id="formConfirmPass" name="confirmPass" value="" title="" autocomplete="off" spellcheck="false" required />
+              <div class="unfocus-line"></div>
+              <div class="focus-line default-transition"></div>
+              <div class="valid-feedback">
+                Matched!
+              </div>
+              <div class="invalid-feedback">
+                Password mismatch.
+              </div>
+            </div>
+
+            <div class="check-terms flex">
+              <i class="checkbox default-transition"></i>
+              <div class="terms-and-conditions">
+                <span>I agree to all </span>
+                <a class="default-transition" href="">Terms & Conditions</a>
+              </div>
+            </div>
+
+            <button class="login-and-register-button default-transition" type="submit">Regsiter</button>
+          </form>
+
+          <div class="go-to-login">
+            <span>Already have an account?</span>
+            <a class="default-transition" href="/auth/login">Login</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact-Us -->
+    <%-include("partials/contact-us")-%>
+
+    <!-- Circular Progress Indicator -->
+    <%-include("partials/circular-progress");-%>
+
+    <!-- Footer -->
+    <%-include("partials/footer");-%>
+
+    <!-- Local Script -->
+    <script src="scripts/validate-form.js" charset="utf-8"></script>
+    <script src="scripts/login-and-register.js" charset="utf-8"></script>
+    <script src="scripts/register.js" charset="utf-8"></script>
+
+    <!-- AOS Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script type="text/javascript">
+      AOS.init(); // AOS Initialization
+    </script>
+  </body>
+
+  </html>
